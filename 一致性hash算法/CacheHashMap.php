@@ -13,6 +13,11 @@ class CacheHashMap
     private $_virtualNodeNum = 300;
     private static $cacheObj = null;
 
+    /**
+     * init
+     * CacheHashMap constructor.
+     * @param array $nodes
+     */
     public function __construct($nodes = [])
     {
         foreach ($nodes as $value) {
@@ -22,7 +27,8 @@ class CacheHashMap
     }
 
     /**
-     * @return null
+     * @param array $config
+     * @return CacheHashMap|null
      */
     public static function getInstance($config = [])
     {
@@ -58,7 +64,13 @@ class CacheHashMap
         return $trueNode;
     }
 
-
+    /**
+     * 二分法查找
+     * @param $key
+     * @param int $startIndex
+     * @param int $endIndex
+     * @return mixed
+     */
     private function _findNodeByKey($key, $startIndex = 0, $endIndex = 0)
     {
         if ($endIndex == 0) {
