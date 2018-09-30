@@ -1,0 +1,6 @@
+.DS_Store
+gitpush
+.idea
+composer.lock
+/vendor/
+*-person.php
