@@ -23,7 +23,7 @@ $keys = [];
 $keyname = ['a','progent','dsadas','dsddd','rrrr','dddd','ffffg','hhhhh','jjjjj','xxxxx','cccc','vvvvv'];
 for($i = 0; $i < 10000; $i++){
     $key = random_int(0,10);
-    $keys[] = "{$keyname[$key]}_key" . $i;
+    $keys[] = md5(md5( "{$keyname[$key]}_key" . $i));
 }
 $cacheHashMap = CacheHashMap::getInstance($nodes);
 
